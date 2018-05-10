@@ -1,0 +1,133 @@
+! ------------------------------------------------------------------------------
+! Colour Configuration
+! ------------------------------------------------------------------------------
+
+! special
+*.foreground:   #f8f8f2
+*.background:   #282a36
+*.cursorColor:  #bd93f9
+
+! black
+*.color0  : #4b5262
+*.color8  : #434a5a
+
+! red
+*.color1  : #ff5555
+*.color9  : #ff6655
+
+! green
+*.color10  : #50fa7b
+*.color2 : #c678dd
+
+! yellow
+*.color3  : #f1fa8c
+*.color11 : #ECBE7B
+
+! blue
+*.color4  : #61bfff
+*.color12 : #61bfff
+
+! magenta
+*.color5  : #ff79c6
+*.color13 : #c678dd
+
+! cyan
+*.color6  : #8be9fd
+*.color14 : #46D9FF
+
+! white
+*.color7  : #e5e9f0
+*.color15 : #d1d5dc
+
+! ------------------------------------------------------------------------------
+! Font configuration
+! ------------------------------------------------------------------------------
+
+URxvt*font:			xft:Hack:regular:size=9, \
+                                -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1, \
+                                xft:IPAGothic,IPA:regular:size=9, \
+
+URxvt*boldFont:			xft:Hack:bold:size=9, \
+                                -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1, \
+                                xft:IPAGothic,IPA:bold:size=9
+
+URxvt*italicFont:		xft:Hack:italic:size=9, \
+                                xft:IPAGothic,IPA:italic:size=9
+
+URxvt*boldItalicFont:		xft:Hack:bold italic:size=9
+
+! ------------------------------------------------------------------------------
+! Xft Font Configuration
+! ------------------------------------------------------------------------------
+
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+! ------------------------------------------------------------------------------
+! URxvt configs
+! ------------------------------------------------------------------------------
+
+URxvt.geometry:			82x16
+URxvt*letterSpace:	    -1
+URxvt.lineSpace:		0
+URxvt*internalBorder:   24
+URxvt*externalBorder:   0
+URxvt*depth:            32
+URxvt*saveline:         2000
+URxvt*termName:         rxvt-256color
+URxvt*iso14755:         false
+URxvt*scrollBar:        false
+URxvt*scrollBar_right:  false
+URxvt.urlLauncher:      firefox
+URxvt.underlineURLs:    true
+URxvt.urlButton:        1
+URxvt*buffered:         false
+URxvt.urgentOnBell:	True
+
+! ------------------------------------------------------------------------------
+! Rofi configs
+! ------------------------------------------------------------------------------
+
+!rofi.color-enabled: true
+!rofi.color-window: #2e3440, #2e3440, #2e3440
+!rofi.color-normal: #2e3440, #f8f8f2, #2e3440, #2e3440, #ff5555
+!rofi.color-active: #2e3440, #bd93f9, #2e3440, #2e3440, #50fa7b
+!rofi.color-urgent: #2e3440, #f1fa8c, #2e3440, #2e3440, #f1fa8c
+!rofi.modi: run,drun,window
+
+! ------------------------------------------------------------------------------
+! Dmenu configs
+! ------------------------------------------------------------------------------
+
+dmenu.selforeground:	    #d8dee9
+dmenu.background:		#2e3440
+dmenu.selbackground:	    #bf616a
+dmenu.foreground: #d8dee9
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+
+rofi.modi: run
+rofi.location: 1
+rofi.width: 100
+rofi.lines: 2
+rofi.line-margin: 0
+rofi.line-padding: 1
+rofi.separator-style: none
+rofi.font: mono 10
+rofi.columns: 9
+rofi.bw: 0
+rofi.disable-history: false
+rofi.hide-scrollbar: true
+rofi.color-window: #222222, #222222, #b1b4b3
+rofi.color-normal: #222222, #b1b4b3, #222222, #005577, #b1b4b3
+rofi.color-active: #222222, #b1b4b3, #222222, #007763, #b1b4b3
+rofi.color-urgent: #222222, #b1b4b3, #222222, #77003d, #b1b4b3
+rofi.kb-row-select: Tab
+rofi.kb-row-tab: 
+

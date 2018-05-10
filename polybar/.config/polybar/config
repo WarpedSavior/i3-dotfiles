@@ -1,0 +1,348 @@
+;=====================================================
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+[colors]
+background = #222
+;background = #2F343F
+background-alt = #444
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+color9 = #fb4934
+;color9 = #a66959
+color1 = #cc241d
+
+
+[bar/bar1]
+monitor = eDP1
+width = 1366
+;width = 911
+height = 15
+offset-x = 0
+offset-y = 0
+radius = 0
+fixed-center = true  
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = fixed:pixelsize=9;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = Wuncon Siji:pixelsize=9;1
+font-3 = IPAGothic,IPA:pixelsize=10;1
+font-4 = IPAMincho,IPA:pixelsize=10;1
+font-5 = Font Awesome 5 Free:style=Regular:pixelsize=10;1
+font-6 = Font Awesome 5 Free:style=Solid:pixelsize=10;1
+font-7 = Font Awesome 5 Brands:style=Regular:pixelsize=10;1
+
+modules-left = i3 
+modules-center = mpd
+modules-right = system-usb-udev pkg battery pulseaudio date
+
+tray-position = right
+tray-padding = 0
+tray-transparent = false
+tray-background = ${colors.background}
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+[bar/bar2]
+monitor = eDP1
+width = 1366
+;width = 911
+height = 15
+offset-x = 0
+offset-y = 15
+radius = 0
+fixed-center = true  
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = fixed:pixelsize=9;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = Wuncon Siji:pixelsize=9;1
+font-3 = IPAMincho,IPA:pixelsize=10;1
+font-4 = IPAGothic,IPA:pixelsize=10;1
+font-5 = Font Awesome 5 Free:style=Regular:pixelsize=10;1
+font-6 = Font Awesome 5 Free:style=Solid:pixelsize=10;1
+font-7 = Font Awesome 5 Brands:style=Regular:pixelsize=10;1
+
+modules-left = title
+modules-center = 
+modules-right = cpu memory
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+[module/mpd]
+type = internal/mpd
+format-online = <label-song> (<label-time>)  <icon-prev> <toggle> <icon-next>
+label-song = %title%
+
+icon-play = 
+icon-pause = 
+icon-stop = 
+icon-prev = 
+icon-next = 
+
+;       ⏸    
+
+label-song-maxlen = 28
+label-song-ellipsis = true
+
+
+[module/battery]
+type = internal/battery
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = ADP0
+
+format-charging = <animation-charging> <label-charging>
+;format-charging-underline = #dc322f
+
+format-discharging = <ramp-capacity> <label-discharging>
+;format-discharging-underline = ${self.format-charging-underline}
+
+format-full = <ramp-capacity> <label-full>
+;format-full-underline = ${self.format-charging-underline}
+
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = Full
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+; 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+
+[module/date]
+type = internal/date
+
+; Seconds to sleep between updates
+interval = 1.0
+
+; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+date = %d/%m
+
+; Optional time format
+time = %H:%M:%S
+
+; if `date-alt` or `time-alt` is defined, clicking
+; the module will toggle between formats
+;date-alt = %a, %d %b %Y
+date-alt = %d/%m/%Y%
+time-alt = %H:%M:%S
+;time-alt =
+
+format = <label>
+;format-underline = #dc322f
+label = %date% %time%
+
+
+[module/pkg]
+type = custom/script
+interval = 1200
+format = <label>
+;format-underline = #dc322f
+label = "%output:0:30%"
+exec = ~/.config/polybar/pkg.sh
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+; Sink found with 'pacmd list-sinks | grep name'
+sink = alsa_output.pci-0000_00_1b.0.analog-stereo
+; true to limit to 150%, false to 100%
+use-ui-max = true
+format-volume = <ramp-volume> <label-volume>
+label-muted =  Muted
+ramp-volume-0 =  
+ramp-volume-1 =  
+ramp-volume-2 =  
+
+
+[module/bluetooth]
+type = custom/script
+interval = 50
+;format-underline = #dc322f
+exec = ~/.config/polybar/bluetooth.sh
+click-left = exec blueberry
+
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%
+label-focused-font = 4
+label-focused-background = ${colors.background}
+label-focused-underline = ${colors.color9}
+label-focused-padding = 1
+
+label-occupied = %index%
+label-occupied-padding = 1
+label-occupied-foreground = ${colors.color9}
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = %index%
+;label-empty-foreground = ${colors.foreground-alt}
+label-empty-foreground = ${colors.color9}
+label-empty-padding = 1
+
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+pin-workspaces = true
+strip-wsnumbers = true
+wrapping-scroll = true
+enable-click = true
+enable-scroll = true
+
+ws-icon-0 = 1;一
+ws-icon-1 = 2;二
+ws-icon-2 = 3;三
+ws-icon-3 = 4;四
+ws-icon-4 = 5;五
+ws-icon-5 = 6;六
+ws-icon-6 = 7;七
+ws-icon-7 = 8;八
+ws-icon-8 = 9;九
+ws-icon-9 = 10;十
+ws-icon-default = ?
+
+label-mode-padding = 1
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %icon%
+label-focused-background = ${module/bspwm.label-focused-background}
+label-focused-underline = ${module/bspwm.label-focused-underline}
+label-focused-padding = ${module/bspwm.label-focused-padding}
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %icon%
+label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+;label-unfocused-foreground = ${module/bspwm.label-occupied-foreground}
+
+; visible = Active workspace on unfocused monitor
+label-visible = %icon%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %icon%
+label-urgent-background = ${module/bspwm.label-urgent-background}
+label-urgent-padding = ${module/bspwm.label-urgent-padding}
+
+
+[module/system-usb-udev]
+type = custom/script
+exec = ~/.config/polybar/system-usb-udev.sh
+tail = true
+click-left = ~/.config/polybar/system-usb-udev.sh --mount
+click-right = ~/.config/polybar/system-usb-udev.sh --unmount
+
+
+[module/cpu]
+type = internal/cpu
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 5
+label = CPU: %percentage%%
+
+
+[module/memory]
+type = internal/memory
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 5
+label = RAM: %gb_used%
+
+
+[module/title]
+type = internal/xwindow
+label = %title%
+label-maxlen = 90
+
+
+[module/info-ssh-sessions]
+type = custom/script
+exec = ~/.config/polybar/info-ssh-sessions.sh
+interval = 30
+
+
+[module/inbox-reddit]
+type = custom/script
+exec = ~/.config/polybar/inbox-reddit.sh
+interval = 90
+
+
+[module/info-hackspeed]
+type = custom/script
+exec = ~/.config/polybar/info-hackspeed.sh
+tail = true
+
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
