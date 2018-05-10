@@ -24,7 +24,7 @@ Now let's use GNU Stow to copy the configuration:
 
 ```bash
 # Change to the right direcotry
-cd dotfiles
+cd i3-dotfiles
 
 # To install the polybar config
 stow polybar
