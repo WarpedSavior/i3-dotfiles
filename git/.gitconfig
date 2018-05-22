@@ -1,0 +1,4 @@
+[user]
+	name = WarpedSavior
+[alias]
+        logg = log --graph --all --decorate=full --pretty=oneline

@@ -30,17 +30,17 @@ font pango:monospace 8
 floating_modifier $mod
 
 #autostart
-exec --no-startup-id feh --bg-fill ~/Pictures/photo_2017-02-27_03-12-13.jpg
+exec --no-startup-id feh --randomize --bg-fill ~/Pictures/random/*
+# sets corresponding blurred wallpaper to actual wallpaper
+exec --no-startup-id sleep 1 && updatecache.sh 
 exec --no-startup-id mpd &
-#exec ~/.config/polybar/launch.sh
-#exec --no-startup-id xautolock -time 1 -locker "~/.scripts/betterlockscreen -l blur" -detectsleep &
 exec_always --no-startup-id xautolock -time 10 -locker "~/.scripts/betterlockscreen -l blur" -detectsleep &
 exec --no-startup-id ~/.scripts/lightsOn.sh 590 &
 exec --no-startup-id ~/.telegram/Telegram -startintray &
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id nm-applet --no-agent &
+#exec --no-startup-id nm-applet --no-agent &
 exec --no-startup-id redshift &
-exec --no-startup-id xmodmap ~/.xmodmap
+exec --no-startup-id compton -CG --xrender-sync --xrender-sync-fence &
 
 #change window border color and size
 #new_window pixel 2
@@ -64,10 +64,10 @@ bindsym $mod+Tab exec --no-startup-id rofi -show window
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+ntilde focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -76,10 +76,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+ntilde move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -88,7 +88,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -111,6 +111,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # volume keys
+# you can find volume-control in .scripts/
 bindsym XF86AudioRaiseVolume exec --no-startup-id volume-control up 3
 bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id volume-control up 1
 bindsym XF86AudioLowerVolume exec --no-startup-id volume-control down 3
@@ -124,6 +125,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -5
 bindsym Shift+XF86MonBrightnessDown exec --no-startup-id xbacklight -1
 
 # print screen
+# printscreen is in .scripts/
 bindsym Print exec --no-startup-id printscreen
 bindsym $mod+Print exec --no-startup-id printscreen allclip
 bindsym Control+Print exec --no-startup-id printscreen window

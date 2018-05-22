@@ -1,0 +1,52 @@
+# this is a list of some packages I've installed
+
+## dependencies of polybar scripts:
+#pkg.sh
+trizen
+
+#system-usb-udev.sh
+jq udisks2
+
+#info-ssh-sessions.sh
+lsof
+
+#info-hackspeed
+xorg-xinput awk
+
+#polybar
+(AUR)polybar-git
+
+##
+#compositor for x11
+compton
+
+#notification daemon
+dunst
+
+#replacement for notify-send
+(AUR)dunstify
+
+#lock screen
+xautolock (AUR)betterlockscreen
+
+#betterlockscreen dependencies
+imagemagick xdpyinfo xrandr bc feh (AUR)i3lock-color
+
+#control networkmanager with dmenu (or rofi)
+(AUR)networkmanager-dmenu-git
+
+#terminal
+rxvt-unicode
+
+#other
+xclip tlp stow sed scrot rofi
+
+#fonts
+noto-fonts-emoji
+otf-ipafont
+siji-git
+ttf-dejavu
+ttf-font-awesome
+ttf-hack
+ttf-liberation
+ttf-roboto

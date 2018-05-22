@@ -34,7 +34,7 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
+line-size = 2
 line-color = #f00
 
 border-size = 0
@@ -57,7 +57,7 @@ font-7 = Font Awesome 5 Brands:style=Regular:pixelsize=10;1
 
 modules-left = i3 
 modules-center = mpd
-modules-right = system-usb-udev pkg battery pulseaudio date
+modules-right = system-usb-udev pkg battery pulseaudio date network
 
 tray-position = right
 tray-padding = 0
@@ -104,7 +104,7 @@ font-7 = Font Awesome 5 Brands:style=Regular:pixelsize=10;1
 
 modules-left = title
 modules-center = 
-modules-right = cpu memory
+modules-right = info-hackspeed info-ssh-sessions cpu memory
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -338,6 +338,14 @@ interval = 90
 type = custom/script
 exec = ~/.config/polybar/info-hackspeed.sh
 tail = true
+
+
+[module/network]
+type = custom/script
+exec = ~/.config/polybar/network.sh
+interval = 10
+click-left = exec networkmanager_dmenu
+click-right = exec networkmanager_dmenu
 
 
 [settings]
