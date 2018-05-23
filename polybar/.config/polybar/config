@@ -57,7 +57,7 @@ font-7 = Font Awesome 5 Brands:style=Regular:pixelsize=10;1
 
 modules-left = i3 
 modules-center = mpd
-modules-right = system-usb-udev pkg battery pulseaudio date network
+modules-right = pkg battery pulseaudio date network
 
 tray-position = right
 tray-padding = 0
@@ -104,7 +104,7 @@ font-7 = Font Awesome 5 Brands:style=Regular:pixelsize=10;1
 
 modules-left = title
 modules-center = 
-modules-right = info-hackspeed info-ssh-sessions cpu memory
+modules-right = system-usb-udev info-ssh-sessions cpu memory
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -167,19 +167,19 @@ animation-charging-framerate = 750
 type = internal/date
 
 ; Seconds to sleep between updates
-interval = 1.0
+interval = 5.0
 
 ; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
 date = %d/%m
 
 ; Optional time format
-time = %H:%M:%S
+time = %H:%M
 
 ; if `date-alt` or `time-alt` is defined, clicking
 ; the module will toggle between formats
 ;date-alt = %a, %d %b %Y
-date-alt = %d/%m/%Y%
+date-alt = %d/%m
 time-alt = %H:%M:%S
 ;time-alt =
 
@@ -334,6 +334,7 @@ exec = ~/.config/polybar/inbox-reddit.sh
 interval = 90
 
 
+# postureo xD
 [module/info-hackspeed]
 type = custom/script
 exec = ~/.config/polybar/info-hackspeed.sh

@@ -34,10 +34,10 @@ exec --no-startup-id feh --randomize --bg-fill ~/Pictures/random/*
 # sets corresponding blurred wallpaper to actual wallpaper
 exec --no-startup-id sleep 1 && updatecache.sh 
 exec --no-startup-id mpd &
-exec_always --no-startup-id xautolock -time 10 -locker "~/.scripts/betterlockscreen -l blur" -detectsleep &
+exec --no-startup-id xautolock -time 10 -locker "~/.scripts/betterlockscreen -l blur" -detectsleep &
 exec --no-startup-id ~/.scripts/lightsOn.sh 590 &
 exec --no-startup-id ~/.telegram/Telegram -startintray &
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id sleep 2 && ~/.config/polybar/launch.sh
 #exec --no-startup-id nm-applet --no-agent &
 exec --no-startup-id redshift &
 exec --no-startup-id compton -CG --xrender-sync --xrender-sync-fence &

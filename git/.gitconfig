@@ -1,4 +1,5 @@
 [user]
 	name = WarpedSavior
+	email = jovamuo.teleco@gmail.com
 [alias]
         logg = log --graph --all --decorate=full --pretty=oneline

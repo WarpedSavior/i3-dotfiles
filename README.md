@@ -11,6 +11,7 @@ repo containing my config files for the i3 window manager.
  neofetch   -> to view your system info
  network    -> networkmanager-dmenu config
  polybar    -> status bars
+ ranger     -> console file manager
  redshift   -> for nocturnal people
  scripts    -> includes some useful scripts
  vim        -> vim configuration

@@ -88,6 +88,25 @@ URxvt.urlButton:        1
 URxvt*buffered:         false
 URxvt.urgentOnBell:	True
 
+! -----------------------------------------------------------------------------
+! Perl Scripts
+! -----------------------------------------------------------------------------
+
+URxvt.perl-ext-common:      default,matcher,resize-font,url-select,keyboard-select
+URxvt.colorUL:              #4682B4
+! url-select
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.url-select.launcher:  /usr/bin/xdg-open
+URxvt.url-select.underline: true
+! keyboard-select
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+! resize-font
+URxvt.keysym.C-j:        resize-font:smaller
+URxvt.keysym.C-k:          resize-font:bigger
+! matcher
+URxvt.url-launcher:         /usr/bin/xdg-open
+URxvt.matcher.button:       1
+
 ! ------------------------------------------------------------------------------
 ! Rofi configs
 ! ------------------------------------------------------------------------------
