@@ -57,7 +57,7 @@ font-7 = Font Awesome 5 Brands:style=Regular:pixelsize=10;1
 
 modules-left = i3 
 modules-center = mpd
-modules-right = pkg battery pulseaudio date network
+modules-right = pkg battery network pulseaudio date
 
 tray-position = right
 tray-padding = 0
@@ -174,13 +174,13 @@ interval = 5.0
 date = %d/%m
 
 ; Optional time format
-time = %H:%M
+time = %H:%M:%S
 
 ; if `date-alt` or `time-alt` is defined, clicking
 ; the module will toggle between formats
 ;date-alt = %a, %d %b %Y
-date-alt = %d/%m
-time-alt = %H:%M:%S
+;date-alt = %d/%m
+;time-alt = %H:%M:%S
 ;time-alt =
 
 format = <label>

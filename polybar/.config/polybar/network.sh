@@ -11,5 +11,5 @@ signal=$(nmcli -t -f active,signal dev wifi | egrep '^sí' | cut -c 5-)
 if [ -z "$ssid" ]; then
     echo "Not connected"
 else
-    echo "$ssid $signal%"
+    echo "$ssid($signal%)"
 fi
