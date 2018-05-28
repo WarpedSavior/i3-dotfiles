@@ -6,6 +6,7 @@ repo containing my config files for the i3 window manager.
  bash       -> bash settings, aliases, etc.
  compton    -> composite manager for x11
  dunst      -> daemon notification config
+ feh        -> image viewer
  i3         -> i3 tiling window manager config
  music      -> contains the configuration for mpd and ncmpcpp
  neofetch   -> to view your system info

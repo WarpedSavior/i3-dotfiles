@@ -100,9 +100,9 @@ URxvt.url-select.launcher:  /usr/bin/xdg-open
 URxvt.url-select.underline: true
 ! keyboard-select
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
-! resize-font
-URxvt.keysym.C-j:        resize-font:smaller
-URxvt.keysym.C-k:          resize-font:bigger
+ resize-font
+URxvt.keysym.C-j:           resize-font:smaller
+URxvt.keysym.C-k:           resize-font:bigger
 ! matcher
 URxvt.url-launcher:         /usr/bin/xdg-open
 URxvt.matcher.button:       1

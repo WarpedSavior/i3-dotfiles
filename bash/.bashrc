@@ -18,7 +18,6 @@ bind 'TAB:menu-complete'
 #alias firefox='env GTK_THEME=Adwaita:light firefox-nightly'
 
 #Telegram
-alias telegram='.telegram/Telegram'
 alias music='ncmpcpp'
 alias usermount='sudo mount -o gid=users,fmask=113,dmask=002' 
 alias pcache='sudo pacman -Sc'
@@ -58,4 +57,9 @@ function parse_git_branch() {
 	else
 		echo ""
 	fi
+}
+
+#bu - Back Up a file. Usage "bu filename.txt"
+bu () { 
+    cp $1 ${1}-`date +%Y%m%d%H%M`.backup ;
 }

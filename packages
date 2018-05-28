@@ -38,6 +38,12 @@ imagemagick xdpyinfo xrandr bc feh (AUR)i3lock-color
 #terminal
 rxvt-unicode
 
+#lightsOn.sh is a script to avoid locking on fullscreen in firefox, etc
+#dependencies:
+xorg-xprop
+xorg-xvinfo
+(xscreensaver, kscreensaver or xautolock)
+
 #other
 xclip tlp stow sed scrot rofi
 

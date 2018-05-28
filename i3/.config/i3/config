@@ -31,14 +31,14 @@ floating_modifier $mod
 
 #autostart
 exec --no-startup-id feh --randomize --bg-fill ~/Pictures/random/*
-# sets corresponding blurred wallpaper to actual wallpaper
+## sets corresponding blurred wallpaper to actual wallpaper
 exec --no-startup-id sleep 1 && updatecache.sh 
 exec --no-startup-id mpd &
-exec --no-startup-id xautolock -time 10 -locker "betterlockscreen -l blur" -detectsleep &
+exec --no-startup-id xautolock -time 10 -locker "betterlockscreen -s blur" -detectsleep &
 exec --no-startup-id ~/.scripts/lightsOn.sh 590 &
-exec --no-startup-id ~/.telegram/Telegram -startintray &
-exec --no-startup-id sleep 2 && ~/.config/polybar/launch.sh
-#exec --no-startup-id nm-applet --no-agent &
+exec --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id sleep 1 && telegram-desktop -startintray &
+exec --no-startup-id blueberry-tray &
 exec --no-startup-id redshift &
 exec --no-startup-id compton -CG --xrender-sync --xrender-sync-fence &
 
@@ -131,8 +131,8 @@ bindsym $mod+Print exec --no-startup-id printscreen allclip
 bindsym Control+Print exec --no-startup-id printscreen window
 bindsym Control+$mod+Print exec --no-startup-id printscreen windowclip
 #dont work for now
-#bindsym Shift+Print exec printscreen select
-#bindsym Shift+$mod+Print exec printscreen selectclip
+#bindsym Shift+Print exec --no-startup-id printscreen select
+#bindsym Shift+$mod+Print exec --no-startup-id printscreen selectclip
 
 # shortcuts
 bindsym $mod+p exec --no-startup-id firefox --private-window
