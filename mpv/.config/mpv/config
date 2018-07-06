@@ -1,0 +1,2 @@
+stop-screensaver=no
+ytdl-format=bestvideo[height<=?1080]+bestaudio/best

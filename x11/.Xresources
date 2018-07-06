@@ -4,7 +4,7 @@
 
 ! special
 *.foreground:   #f8f8f2
-*.background:   #282a36
+!*.background:   #282a36
 *.cursorColor:  #bd93f9
 
 ! black
@@ -44,17 +44,16 @@
 ! ------------------------------------------------------------------------------
 
 URxvt*font:			xft:Hack:regular:size=9, \
-                                -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1, \
                                 xft:IPAGothic,IPA:regular:size=9, \
 
 URxvt*boldFont:			xft:Hack:bold:size=9, \
-                                -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1, \
                                 xft:IPAGothic,IPA:bold:size=9
 
 URxvt*italicFont:		xft:Hack:italic:size=9, \
                                 xft:IPAGothic,IPA:italic:size=9
 
-URxvt*boldItalicFont:		xft:Hack:bold italic:size=9
+URxvt*boldItalicFont:		xft:Hack:bold italic:size=9, \
+                                xft:IPAGothic,IPA:bold:size=9
 
 ! ------------------------------------------------------------------------------
 ! Xft Font Configuration
@@ -71,12 +70,14 @@ Xft.rgba: rgb
 ! URxvt configs
 ! ------------------------------------------------------------------------------
 
-URxvt.geometry:			82x16
-URxvt*letterSpace:	    -1
-URxvt.lineSpace:		0
+!URxvt.geometry:        82x16
+URxvt*letterSpace:      -1
+URxvt.lineSpace:        0
 URxvt*internalBorder:   24
 URxvt*externalBorder:   0
 URxvt*depth:            32
+!URxvt*background:       [85]#282a36
+URxvt*background:       [85]#000000
 URxvt*saveline:         2000
 URxvt*termName:         rxvt-256color
 URxvt*iso14755:         false
@@ -100,7 +101,7 @@ URxvt.url-select.launcher:  /usr/bin/xdg-open
 URxvt.url-select.underline: true
 ! keyboard-select
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
- resize-font
+! resize-font
 URxvt.keysym.C-j:           resize-font:smaller
 URxvt.keysym.C-k:           resize-font:bigger
 ! matcher
@@ -138,7 +139,7 @@ rofi.lines: 2
 rofi.line-margin: 0
 rofi.line-padding: 1
 rofi.separator-style: none
-rofi.font: mono 10
+rofi.font: Hack 10
 rofi.columns: 9
 rofi.bw: 0
 rofi.disable-history: false

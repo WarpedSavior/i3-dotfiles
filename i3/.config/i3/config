@@ -30,17 +30,20 @@ font pango:monospace 8
 floating_modifier $mod
 
 #autostart
-exec --no-startup-id feh --randomize --bg-fill ~/Pictures/random/*
+#exec --no-startup-id feh --randomize --bg-fill ~/Pictures/random/*
+exec --no-startup-id feh --bg-fill ~/Pictures/random/eIrmp5J.jpg
 ## sets corresponding blurred wallpaper to actual wallpaper
-exec --no-startup-id sleep 1 && updatecache.sh 
+#exec --no-startup-id sleep 1 && updatecache.sh 
 exec --no-startup-id mpd &
-exec --no-startup-id xautolock -time 10 -locker "betterlockscreen -s blur" -detectsleep &
+exec --no-startup-id xautolock -time 10 -locker "betterlockscreen -l blur" -detectsleep &
 exec --no-startup-id ~/.scripts/lightsOn.sh 590 &
 exec --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id sleep 1 && telegram-desktop -startintray &
-exec --no-startup-id blueberry-tray &
+exec --no-startup-id sleep 1 && blueberry-tray &
+exec --no-startup-id nm-applet --no-agent &
 exec --no-startup-id redshift &
 exec --no-startup-id compton -CG --xrender-sync --xrender-sync-fence &
+exec --no-startup-id sleep 10 && dunstify -u low -t 4000 -i /usr/share/icons/Papirus-Dark/24x24/actions/bell.svg "$(remind ~/.config/remind/reminders.rem)"
 
 #change window border color and size
 #new_window pixel 2
@@ -136,7 +139,7 @@ bindsym Control+$mod+Print exec --no-startup-id printscreen windowclip
 
 # shortcuts
 bindsym $mod+p exec --no-startup-id firefox --private-window
-bindsym $mod+x exec --no-startup-id firefox
+bindsym $mod+x exec --no-startup-id qutebrowser
 bindsym $mod+t exec --no-startup-id thunar
 bindsym Control+Mod1+l exec --no-startup-id betterlockscreen -l blur
 
@@ -204,10 +207,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym l resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym ntilde resize grow width 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym h resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt

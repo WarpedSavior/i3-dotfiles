@@ -29,7 +29,8 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "280x10+30+27"
+    #geometry = "300x5+30+30"
+    geometry = "0+30+30"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = no
@@ -84,7 +85,7 @@
 
     ### Text ###
 
-    font = Roboto 10
+    font = Hack 9
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -160,7 +161,7 @@
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_folders = /usr/share/icons/Papirus-Dark/24x24/actions/
+    icon_path = /usr/share/icons/Papirus-Dark/24x24/actions/
 
     ### History ###
 
@@ -232,7 +233,7 @@
     # On the US keyboard layout "grave" is normally above TAB and left
     # of "1". Make sure this key actually exists on your keyboard layout,
     # e.g. check output of 'xmodmap -pke'
-    history = ctrl+grave
+    history = ctrl+masculine
 
     # Context menu.
     context = ctrl+shift+period

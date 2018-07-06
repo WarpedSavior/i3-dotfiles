@@ -74,4 +74,4 @@ main_window_color = default
 
 follow_now_playing_lyrics = "yes"
 #execute_on_song_change = dunstify -t 4000 -r 2592 -u normal "Now Playing" "$(mpc -h xxxxxx@localhost current)"
-execute_on_song_change = dunstify -t 4000 -r 2592 -u normal -i /usr/share/icons/Papirus-Dark/16x16/extra/clementine/folder-sound.svg "Now Playing ♫" "$(mpc current)"
+execute_on_song_change = dunstify -t 5000 -r 2592 -u normal -i /usr/share/icons/Papirus-Dark/16x16/extra/clementine/folder-sound.svg "Now Playing ♫" "$(mpc -f "%title%" current)"

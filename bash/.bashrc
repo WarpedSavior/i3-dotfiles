@@ -25,6 +25,7 @@ alias porphan='sudo pacman -Rns $(pacman -Qtdq)'
 alias rm='rm -i'
 alias r='ranger'
 alias censored='mpv --ytdl-raw-options=geo-bypass-country=US $1'
+alias weather='curl wttr.in'
 
 # vi mode in bash
 # set -o vi
@@ -62,4 +63,13 @@ function parse_git_branch() {
 #bu - Back Up a file. Usage "bu filename.txt"
 bu () { 
     cp $1 ${1}-`date +%Y%m%d%H%M`.backup ;
+}
+
+# find and play audio from terminal
+function mm() {
+    mpv --ytdl-format=bestaudio ytdl://ytsearch:"$@"
+}
+
+function mv() {
+    mpv --ytdl-format="bestvideo[height<=?1080]+bestaudio/best" ytdl://ytsearch:"$@"
 }

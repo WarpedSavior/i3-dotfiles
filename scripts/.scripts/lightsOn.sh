@@ -39,7 +39,7 @@ minitube_detection=0
 youtube_firefox=1
 
 # Names of programs which, when running, you wish to delay the screensaver.
-delay_progs=('retroarch') # For example ('ardour2' 'gmpc')
+delay_progs=('retroarch' 'mpv') # For example ('ardour2' 'gmpc')
 
 
 # YOU SHOULD NOT NEED TO MODIFY ANYTHING BELOW THIS LINE
@@ -128,7 +128,7 @@ isAppRunning()
 
 
     if [ $youtube_firefox == 1 ];then
-        if [[ "$activ_win_title" = *avigator* ]];then
+        if [[ "$activ_win_title" = *avigator* || "$activ_win_title" = *qute* ]];then
             return 1
         fi
     fi

@@ -1,22 +1,26 @@
 # i3-dotfiles
 
+![pic](desktop.jpg)
+
 repo containing my config files for the i3 window manager.
 
 ```
- bash       -> bash settings, aliases, etc.
- compton    -> composite manager for x11
- dunst      -> daemon notification config
- feh        -> image viewer
- i3         -> i3 tiling window manager config
- music      -> contains the configuration for mpd and ncmpcpp
- neofetch   -> to view your system info
- network    -> networkmanager-dmenu config
- polybar    -> status bars
- ranger     -> console file manager
- redshift   -> for nocturnal people
- scripts    -> includes some useful scripts
- vim        -> vim configuration
- x11        -> x11 settings
+ bash        -> bash settings, aliases, etc.
+ compton     -> composite manager for x11
+ dunst       -> daemon notification config
+ feh         -> image viewer
+ i3          -> i3 tiling window manager config
+ music       -> contains the configuration for mpd and ncmpcpp
+ mpv         -> remaps to zoom or rotate video
+ neofetch    -> to view your system info
+ network     -> networkmanager-dmenu config
+ polybar     -> status bars
+ qutebrowser -> keyboard browser
+ ranger      -> console file manager
+ redshift    -> for nocturnal people
+ scripts     -> includes some useful scripts
+ vim         -> vim configuration
+ x11         -> x11 settings
 ```
 
 I'm using [GNU Stow](https://www.gnu.org/software/stow/) to manage my files comfortably.

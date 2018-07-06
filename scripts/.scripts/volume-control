@@ -11,6 +11,10 @@ function get_volume {
     pactl list sinks | grep '^[[:space:]]Volume:' | cut -d '/' -f 2 | cut -d '%' -f 1
 }
 
+function get_default_sink_name {
+    pacmd stat | awk -F": " '/^Default sink name: /{print $2}'
+}
+
 function is_mute {
     pactl list sinks | grep 'Mute' | grep yes > /dev/null
 }
@@ -47,25 +51,25 @@ case $1 in
     up)
 	volume=`get_volume`
 	if is_mute ; then
-	    pactl set-sink-mute 0 toggle
+            pactl set-sink-mute $(get_default_sink_name) toggle
 	fi
 	if [ "$volume" -lt "151" ]; then
 		# Set the volume on (if it was muted)
 		# Up the volume (+ 5%)
-		pactl set-sink-volume 0 +$2%
+                pactl set-sink-volume $(get_default_sink_name) +$2%
 		send_notification
 	fi
 	;;
     down)
 	if is_mute ; then
-	    pactl set-sink-mute 0 toggle
+            pactl set-sink-mute $(get_default_sink_name) toggle
 	fi
-	pactl set-sink-volume 0 -$2%
+        pactl set-sink-volume $(get_default_sink_name) -$2%
 	send_notification
 	;;
     mute)
     	# Toggle mute
-	pactl set-sink-mute 0 toggle
+        pactl set-sink-mute $(get_default_sink_name) toggle
 	if is_mute ; then
 	    dunstify -i audio-volume-muted -t 800 -r 2593 -u normal "Muted"
 	else

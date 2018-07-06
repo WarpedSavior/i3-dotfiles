@@ -91,6 +91,10 @@ set hlsearch
 map N nzz
 map n nzz
 
+" save folds on exit and restore the folds
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+
 " Next Tab
 " nnoremap <silent> <C-Right> :tabnext<CR>
 
@@ -109,7 +113,7 @@ nnoremap <space> za
 
 " Quotation marks
 inoremap {<space>   {}<Left>
-inoremap {<CR>      {<CR><CR><CR><CR>}<Up><Up>
+inoremap {<CR>      {<CR><CR>}<Up>
 inoremap "<space>   ""<Left>
 inoremap '<space>   ''<Left>
 inoremap (<space>   ()<Left>
@@ -123,16 +127,3 @@ inoremap ;; <End>;
 nnoremap ñ :
 filetype plugin indent on
 colors jellybeans
-
-" nerdtree
-map <C-o> :NERDTreeToggle<CR>
-
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0

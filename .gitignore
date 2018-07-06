@@ -1,2 +1,5 @@
 vim/.vim
 ranger/.config/ranger/scope.sh
+polybar/.config/polybar/inbox-reddit.sh
+qutebrowser/.config/qutebrowser/bookmarks
+qutebrowser/.config/qutebrowser/qsettings
